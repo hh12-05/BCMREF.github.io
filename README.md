@@ -6,7 +6,6 @@
 ### 🔗 **사용 바로가기 (Live Demo)**: [https://bit.ly/endfield-farm](https://bit.ly/endfield-farm)
 
 ![Project Preview](./preview.png)
-*(스크린샷을 찍어 프로젝트 폴더에 `preview.png`로 저장하면 여기에 표시됩니다)*
 
 ## ✨ 주요 기능
 
