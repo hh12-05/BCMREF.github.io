@@ -3,7 +3,7 @@
 **명일방주: 엔드필드(Arknights: Endfield)** 의 무기 기질 파밍 효율을 극대화하기 위한 웹 기반 검색 도구입니다.
 사용자가 보유한 무기나 목표 무기를 선택하면, 해당 무기들의 기질을 동시에 파밍할 수 있는 최적의 지역과 조합을 찾아줍니다.
 
-![Project Preview](https://via.placeholder.com/800x400?text=Farming+Navigator+Preview)
+![Project Preview](./preview.png)
 *(스크린샷을 여기에 추가하세요)*
 
 ## ✨ 주요 기능
