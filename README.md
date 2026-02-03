@@ -3,8 +3,10 @@
 **명일방주: 엔드필드(Arknights: Endfield)** 의 무기 기질 파밍 효율을 극대화하기 위한 웹 기반 검색 도구입니다.
 사용자가 보유한 무기나 목표 무기를 선택하면, 해당 무기들의 기질을 동시에 파밍할 수 있는 최적의 지역과 조합을 찾아줍니다.
 
-![Project Preview](https://via.placeholder.com/800x400?text=Farming+Navigator+Preview)
-*(스크린샷을 여기에 추가하세요)*
+### 🔗 **사용 바로가기 (Live Demo)**: [https://bit.ly/endfield-farm](https://bit.ly/endfield-farm)
+
+![Project Preview](./preview.png)
+*(스크린샷을 찍어 프로젝트 폴더에 `preview.png`로 저장하면 여기에 표시됩니다)*
 
 ## ✨ 주요 기능
 
@@ -31,6 +33,8 @@
 ## 🚀 설치 및 실행 방법
 
 이 프로젝트는 별도의 서버나 빌드 과정 없이 웹 브라우저만 있으면 바로 실행 가능합니다.
+
+**웹에서 바로 사용하기**: [https://bit.ly/endfield-farm](https://bit.ly/endfield-farm)
 
 1.  이 저장소를 클론(Clone)하거나 ZIP 파일로 다운로드합니다.
     ```bash
