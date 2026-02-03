@@ -147,8 +147,13 @@ function createFilterUI() {
             </div>
         `;
 
-        const title = weaponModeDiv.querySelector('.section-title');
-        title.insertAdjacentElement('afterend', filterDiv);
+        const header = weaponModeDiv.querySelector('.section-header');
+        if (header) {
+            header.insertAdjacentElement('afterend', filterDiv);
+        } else {
+            const title = weaponModeDiv.querySelector('.section-title');
+            title.insertAdjacentElement('afterend', filterDiv);
+        }
     }
 }
 
@@ -509,15 +514,19 @@ function displayResults(results) {
     let html = selectionSummary;
     const canyonRegions = ['거점 지역', '오리지늄 연구 구역', '광맥 구역', '에너지 공급 고지'];
 
-    regionOrder.forEach(regionName => {
+    regionOrder.forEach((regionName, index) => {
         const groupItems = grouped[regionName];
         const themeClass = canyonRegions.includes(regionName) ? 'canyon' : '';
+        const wrapperId = `wrapper-${index}`;
 
         html += `<div class="result-card ${themeClass}">
                     <div class="result-region">${regionName}</div>
-                    <div style="display: flex; flex-wrap: wrap; gap: 15px;">`;
+                    <div id="${wrapperId}" class="result-items-wrapper">
+                        <div style="display: flex; flex-wrap: wrap; gap: 15px;">`;
 
         groupItems.forEach(result => {
+            // ... (existing item generation) ...
+
             // 1. Gather all weapons in this result
             const resultWeaponNames = [...result.weapons, ...result.fiveStars];
 
@@ -595,22 +604,69 @@ function displayResults(results) {
             `;
         });
 
-        html += `</div></div>`;
+        html += `   </div>
+                 </div>`; // End wrapper
+
+        // Placeholder for expand button
+        html += `<div class="expand-container" id="expand-btn-${wrapperId}" style="display: none;">
+                    <button class="expand-btn" onclick="toggleResultExpand('${wrapperId}')">
+                        <span>SHOW MORE</span>
+                        <span class="icon">▼</span>
+                    </button>
+                 </div>`;
+
+        html += `</div>`; // End result-card
     });
 
     resultsDiv.innerHTML = html;
     resultsDiv.classList.add('show');
+
+    // Check overflows after render
+    setTimeout(checkResultOverflows, 100);
 }
 
-window.onscroll = function () { scrollFunction() };
-function scrollFunction() {
-    const btn = document.getElementById("scrollTopBtn");
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        btn.style.display = "block";
+function checkResultOverflows() {
+    const wrappers = document.querySelectorAll('.result-items-wrapper');
+    wrappers.forEach(wrapper => {
+        // If content height > 560px, collapse it
+        if (wrapper.scrollHeight > 560) {
+            wrapper.classList.add('collapsed');
+            const btnContainer = document.getElementById(`expand-btn-${wrapper.id}`);
+            if (btnContainer) btnContainer.style.display = 'flex';
+        }
+    });
+}
+
+function toggleResultExpand(wrapperId) {
+    const wrapper = document.getElementById(wrapperId);
+    const btnContainer = document.getElementById(`expand-btn-${wrapperId}`);
+    const btn = btnContainer.querySelector('.expand-btn');
+    const span = btn.querySelector('span');
+
+    if (wrapper.classList.contains('collapsed')) {
+        wrapper.classList.remove('collapsed');
+        // Set max-height to scrollHeight to animate opening
+        wrapper.style.maxHeight = wrapper.scrollHeight + 'px';
+        btn.classList.add('expanded');
+        span.textContent = 'SHOW LESS';
+
+        // Remove manual max-height after transition to allow free growth
+        setTimeout(() => {
+            wrapper.style.maxHeight = 'none';
+        }, 500);
     } else {
-        btn.style.display = "none";
+        // Animate closing
+        wrapper.style.maxHeight = wrapper.scrollHeight + 'px';
+        requestAnimationFrame(() => {
+            wrapper.classList.add('collapsed');
+            wrapper.style.maxHeight = ''; // Revert to CSS class rule
+        });
+
+        btn.classList.remove('expanded');
+        span.textContent = 'SHOW MORE';
     }
 }
+
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
