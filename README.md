@@ -5,7 +5,7 @@
 
 ### 🔗 **사용 바로가기 (Live Demo)**: [https://bit.ly/endfield-farm](https://bit.ly/endfield-farm)
 
-![Project Preview](./preview.png)
+![Project Preview](./assets/images/preview.png)
 
 ## ✨ 주요 기능
 
@@ -45,8 +45,11 @@
 
 ```
 endfield-farming-navigator/
+├── assets/
+│   └── images/         # 이미지 리소스
 ├── css/
 │   └── style.css       # 메인 스타일시트 (Wullung Design Theme)
+├── docs/               # 기획 및 데이터 관련 문서
 ├── js/
 │   ├── data.js         # 무기 데이터 및 지역 정보 (JSON 구조)
 │   └── script.js       # 검색 로직 및 DOM 조작 스크립트
