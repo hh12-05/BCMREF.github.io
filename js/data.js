@@ -5,6 +5,7 @@ const weaponData = {
         { name: '끝없는 방랑', owner: '포그라니치니크', rarity: 6, basic: '의지', additional: '공격력 증가', skill: '흐름' },
         { name: '부요', owner: '진천우', rarity: 6, basic: '주요 능력치', additional: '치명타 확률 증가', skill: '어둠' },
         { name: '장대한 염원', owner: '관리자', rarity: 6, basic: '민첩', additional: '공격력 증가', skill: '고통' },
+        { name: '찬란했던 기억', owner: '', rarity: 6, basic: '민첩', additional: '치명타 확률 증가', skill: '어둠' },
         { name: '암흑의 횃불', owner: '', rarity: 6, basic: '지능', additional: '열기 피해 증가', skill: '고통' },
         { name: '테르밋 커터', owner: '', rarity: 6, basic: '의지', additional: '공격력 증가', skill: '흐름' },
         { name: '위대한 이름', owner: '', rarity: 6, basic: '주요 능력치', additional: '물리 피해 증가', skill: '잔혹' },
@@ -38,6 +39,8 @@ const weaponData = {
     '권총': [
         { name: '예술의 폭군', owner: '이본', rarity: 6, basic: '지능', additional: '치명타 확률 증가', skill: '골절' },
         { name: '클래니벌', owner: '울프가드', rarity: 6, basic: '주요 능력치', additional: '아츠 피해 증가', skill: '고통' },
+        { name: '반항', owner: '탕탕이', rarity: 6, basic: '민첩', additional: '공격력 증가', skill: '방출' },
+        { name: '향수', owner: '', rarity: 6, basic: '민첩', additional: '냉기 피해 증가', skill: '억제' },
         { name: '항로의 개척자', owner: '', rarity: 6, basic: '지능', additional: '냉기 피해 증가', skill: '고통' },
         { name: '쐐기', owner: '', rarity: 6, basic: '주요 능력치', additional: '치명타 확률 증가', skill: '고통' },
         { name: '이성적인 작별', owner: '', rarity: 5, basic: '힘', additional: '열기 피해 증가', skill: '추격' },
@@ -69,7 +72,7 @@ const attributeData = {
 const regionInfoData = [
     {
         name: '거점 지역',
-        basics: ['힘', '민첩', '의지', '주요 능력치'],
+        basics: ['힘', '민첩', '지능', '의지', '주요 능력치'],
         extra: ['공격력 증가', '열기 피해 증가', '전기 피해 증가', '냉기 피해 증가', '자연 피해 증가', '오리지늄 아츠 강도 증가', '궁극기 획득 효율 증가', '아츠 피해 증가'],
         skill: ['강공', '억제', '추격', '분쇄', '기예', '방출', '흐름', '효율'],
         bestCombo: '힘, 의지, 주요 능력치 + 공격력 증가',
@@ -78,7 +81,7 @@ const regionInfoData = [
     },
     {
         name: '오리지늄 연구 구역',
-        basics: ['민첩', '지능', '의지', '주요 능력치'],
+        basics: ['힘', '민첩', '지능', '의지', '주요 능력치'],
         extra: ['공격력 증가', '물리 피해 증가', '전기 피해 증가', '냉기 피해 증가', '자연 피해 증가', '치명타 확률 증가', '궁극기 획득 효율 증가', '아츠 피해 증가'],
         skill: ['억제', '추격', '사기', '기예', '고통', '의료', '골절', '효율'],
         bestCombo: '민첩, 지능, 주요 능력치 + 고통',
@@ -111,5 +114,14 @@ const regionInfoData = [
         bestCombo: '힘, 지능, 의지 + 공격력 증가',
         bestWeapons: ['용조의 불꽃', '끝없는 방랑', '테르밋 커터', '헤라펜거'],
         bestWeapons5: ['망자의 노래']
+    },
+    {
+        name: '청파채',
+        basics: ['힘', '민첩', '지능', '의지', '주요 능력치'],
+        extra: ['생명력 증가', '물리 피해 증가', '전기 피해 증가', '냉기 피해 증가', '오리지늄 아츠 강도 증가', '궁극기 획득 효율 증가', '아츠 피해 증가', '치유 효율 증가'],
+        skill: ['억제', '분쇄', '사기', '기예', '의료', '골절', '방출', '어둠'],
+        bestCombo: '힘, 의지 + 의료',
+        bestWeapons: ['천둥의 흔적', '기사도 정신'],
+        bestWeapons5: ['최후의 메아리', '선교의 자유']
     }
 ];

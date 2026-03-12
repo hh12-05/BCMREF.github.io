@@ -18,7 +18,7 @@ function renderRegions() {
     // 그룹 정의
     const groups = {
         '4번 협곡': ['거점 지역', '오리지늄 연구 구역', '광맥 구역', '에너지 공급 고지'],
-        '무릉': ['무릉성']
+        '무릉': ['무릉성', '청파채']
     };
 
     Object.entries(groups).forEach(([groupName, regionNames]) => {
